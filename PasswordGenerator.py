@@ -2,18 +2,15 @@ from tkinter import *
 from tkinter import messagebox
 import string
 import random
+import pathlib
 
-
-#=================WARNING=================
-#To run this code u have to specify location of images that I include in this program. In my case:
-my_path = 'c:/Users/KrissTheKing/Desktop/Python/Password_generator_GUI_Canvas/'
-#=================WARNING=================
+path = str(pathlib.Path(__file__).parent.resolve())
 
 
 root = Tk()
 root.title("Password generator")
 root.geometry("640x400")
-root.iconbitmap(my_path + 'icon.ico')
+root.iconbitmap(path + '\icon.ico')
 root.resizable(False, False)
 
 root.rowconfigure(0, weight=1)
@@ -135,7 +132,7 @@ show_frame(welcome_frame)
 
 
 #Adding background image
-background_image = PhotoImage(file=my_path + "background_image.png")
+background_image = PhotoImage(file= path + "/background_image.png")
 
 #==============Welcome frame section==============
 welcome_canvas = Canvas(welcome_frame,highlightthickness=0)
